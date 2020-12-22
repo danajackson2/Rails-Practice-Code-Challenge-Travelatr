@@ -9,7 +9,12 @@ class Blogger < ApplicationRecord
     def total_likes
         self.posts.sum{|p|p.likes}
     end
+
     def best_post
         self.posts.max_by{|p|p.likes}
+    end
+
+    def five_most_written_about
+        self.destinations.sort_by{|d| d.posts.length}.reverse[0..4]
     end
 end
