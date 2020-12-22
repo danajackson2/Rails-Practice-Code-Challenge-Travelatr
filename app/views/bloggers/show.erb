@@ -1,0 +1,8 @@
+<h2>Profile Page</h2>
+<%=@blogger.name%><br>
+Total likes: <%=@blogger.total_likes%><br>
+Best Post: <%if @blogger.posts != []%>
+                <%=link_to @blogger.best_post.title, @blogger.best_post%><%=" #{@blogger.best_post.likes} likes"%><br>
+            <%else%>
+                <%="No posts yet!"%>
+            <%end%>

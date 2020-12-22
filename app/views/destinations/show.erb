@@ -1,0 +1,9 @@
+<h1><%="#{@destination.name}, #{@destination.country}"%></h1>
+<p>Recent posts for this destination:</p><br>
+<%@five.each do |post|%>
+    <%=link_to post.title, post%><br>
+<%end%>
+<p>Featured Post:</p>
+<%=link_to @destination.featured.title, @destination.featured%><%=" - #{@destination.featured.likes} likes"%><br>
+
+<%="The average blogger age for this destination is #{@destination.average_blogger_age} years old."%>
